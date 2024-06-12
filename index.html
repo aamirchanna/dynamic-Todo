@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <style>
+
+    body {
+      background: linear-gradient(135deg, rgb(1, 16, 22) ,rgb(199, 124, 12));
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-left:30% ;
+      
+    }
+   
+
+  </style>
+</head>
+<body>
+  <div id="login_container" class="container flex items-center justify-center min-h-screen">
+    <section class="bg-gradient-to-r   rounded-lg shadow-lg p-8 w-full max-w-md">
+      <h1 class="text-3xl text-center text-white font-bold mb-6">Welcome Todo App</h1>
+      <form class="space-y-4">
+        <div>
+          <label for="email" class="block text-sm font-medium text-white">Your Email</label>
+          <input type="email" name="email" id="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium text-white">Password</label>
+          <input type="password" name="password" id="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <input id="remember" name="remember" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+            <label for="remember" class="ml-2 block text-sm text-white">Remember me</label>
+          </div>
+          <div class="text-sm">
+            <a href="#" class="font-medium text-white hover:text-gray-200">Forgot your password?</a>
+          </div>
+        </div>
+        <button onclick="loginUser()" class="btn  text-white py-2 px-6 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Sign in</button>
+      </form>
+    </section>
+  </div>
+
+  <div id="home_container" class="hidden container mx-auto py-10">
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-2xl font-bold text-black">Welcome</h1>
+      <div class="flex items-center">
+        <p class="text-gray-200 mr-4" id="user_email"></p>
+        <button onclick="logout()" class="btn bg-red-600 text-white py-2 px-6 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">Logout</button>
+      </div>
+    </div>
+
+    <div>
+      <textarea class="border p-4 w-full bg-white bg-opacity-75 rounded-md" id="note" rows="5">Add your notes</textarea>
+      <div class="mt-4">
+        <button onclick="submitNote()" class="btn bg-green-600 text-white py-2 px-6 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">Submit</button>
+      </div>
+    </div>
+
+    <ul id="list" class="mt-8">
+        <button>delete</button>
+      <!-- Notes will be displayed here -->
+    </ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
